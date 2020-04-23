@@ -14,3 +14,41 @@ let containsDuplicates = s => {
   }
   return false;
 };
+
+//helper function
+let revWord = x => {
+  let answer = "";
+
+  for (let i = (x.length - 1); i >= 0; i--) {
+    answer = answer + x[i]; }
+
+  return answer; };
+
+
+
+//Req. 3a
+let revWords1 = s => {
+  let answer = "";
+  let array = [];
+  x = s.split(" "); //Array of each word split by the space
+  length = x.length;
+
+  for (let i = 0; i < length; i++) {
+
+    let word = x[i];
+    nword = revWord(word);
+
+  array.push(nword);
+
+  }
+  for (let i = 0; i < array.length; i++){ //Putting array into string format
+
+    if (i == array.length - 1) { //No space at the end of string if its the last word
+      answer = answer + array[i]; }
+    else { //If not last word, add a space to the end of the string
+    answer = answer + array[i] + " ";}
+
+  }
+
+  return answer;
+};
