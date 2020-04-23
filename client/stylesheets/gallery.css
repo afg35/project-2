@@ -47,6 +47,10 @@ button {
   border: 1px solid #CCCCCC;
 }
 
+input {
+    font-size:18px;
+}
+
 #lead-photo {
   width: 200px;
   margin: auto;

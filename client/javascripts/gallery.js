@@ -1,18 +1,21 @@
 // jshint esversion: 6
 
-let main = function(){
+let controller = function(){
 
     let prefixURL = "http://api.flickr.com/services/feeds/photos_public.gne?tags=";
     let suffixURL = "&format=json&jsoncallback=?";
     //get value entered by user from textbox
-    let flickrTag = $("input").???();
-    let requestURL = prefixURL + flickrTag + suffixURL;
+    //let flickerTag = document.querySelector("input[type=text]").value;
+    let flickerTag = $("input").val();
+    console.log(flickerTag);
+    let requestURL = prefixURL + flickerTag + suffixURL;
+    console.log(requestURL);
 
     //clear old photos
-    $(".photos").???("");
+    document.querySelector(".photos").innerHTML = "";
 
-  $.getJSON(requestURL, function(flickrResponse) {
-    flickrResponse.items.forEach(function(item, index) {
+  $.getJSON(requestURL, function(flickerResponse) {
+    flickerResponse.items.forEach(function(item, index) {
 
       //Flickr returns 20 images by default
       //We need only six images for the Gallery
@@ -37,4 +40,11 @@ let main = function(){
 };
 
 
-$(document).ready(main);
+//$(document).ready(controller);
+
+//Register controller after DOM is complete
+window.addEventListener("load", () => {
+  let button = document.querySelector("button");
+
+  button.addEventListener("click", controller);
+});
