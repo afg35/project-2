@@ -1,28 +1,26 @@
 // jshint esversion: 6
 
-let containsDuplicates = s => {
-  let cArr = [0, 0, 0, 0],
-    code;
-  for (let i in cArr) {
-    code = s[i].toUpperCase().charCodeAt(0) - 65;
-    //console.log(code);
-    if (cArr[code] > 0) {
-      return true;
-    } else {
-      cArr[i]++;
-    }
-  }
-  return false;
-};
-
-//helper function
-let revWord = x => {
+//helper functions (not required)
+let revWord = x => { //reverse the order of a indvidual word
   let answer = "";
 
   for (let i = (x.length - 1); i >= 0; i--) {
     answer = answer + x[i]; }
 
   return answer; };
+
+
+
+let arraytostring = x => { //converts array's to strings Ex: ["a", "b"] -> "a b"
+  let answer = "";
+  for (i = 0; i < x.length; i++) {
+    if (i == x.length - 1) {
+      answer = answer + x[i]; }
+    else {
+    answer = answer + x[i] + " ";}
+  }
+  return answer;
+};
 
 
 
@@ -41,14 +39,47 @@ let revWords1 = s => {
   array.push(nword);
 
   }
-  for (let i = 0; i < array.length; i++){ //Putting array into string format
+  answer = arraytostring(array);
 
-    if (i == array.length - 1) { //No space at the end of string if its the last word
-      answer = answer + array[i]; }
-    else { //If not last word, add a space to the end of the string
-    answer = answer + array[i] + " ";}
+  return answer;
+};
 
-  }
+
+//Req 3b
+let revWords2 = s => {
+  let answer = "";
+  let array = [];
+  x = s.split(" "); //Array of each word split by the space
+  length = x.length;
+
+  x.forEach((elem) => {
+
+    let nword = revWord(elem);
+
+  array.push(nword);
+});
+
+  answer = arraytostring(array);
+
+  return answer;
+};
+
+
+//Req 3c
+let revWords3 = s => {
+  let answer = "";
+  let array = [];
+  x = s.split(" "); //Array of each word split by the space
+  length = x.length;
+
+  for (let elem of x){
+
+    let nword = revWord(elem);
+
+    array.push(nword);
+}
+
+  answer = arraytostring(array);
 
   return answer;
 };
