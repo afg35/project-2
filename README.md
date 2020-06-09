@@ -1,11 +1,5 @@
 # Project 2 Repo
 
-Repo start-state:
-
-1. README.md
-2. .gitignore
-3. gallery.html, gallery.css, gallery.js
-
 <h2>281 Project 2 Learning Outcomes</h2>
 
 • A web API or Application Programming Interface is an API accessed using the HTTP protocol. <br>
@@ -25,3 +19,7 @@ Flickr offers several public APIs.<br>
 - Markdown language for README files <br>
 - JavaScript ES6+ feature <br>
 - Learning and practicing the 281 workflow
+
+<p></p>
+
+[Link to my Github user page!](https://afg35.github.io/)
